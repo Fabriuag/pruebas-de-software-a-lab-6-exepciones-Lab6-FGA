@@ -4,11 +4,19 @@ class MyException(Exception):
 class ExceptionsDemo:
     
     def divide(self, a, b):
-        result = a / b
-        print("Division result:", result)
+        try:
+            result = a / b
+            print("Division result:", result)
+        except TypeError:
+            print('ZeroDivisionerror Detected')
     
     def access_list(self, lst, index):
-        print("Element:", lst[index])
+        try:
+            print("Element:", lst[index])
+        except Exception:
+            print('IndexErrpr Detected')
+
+
     
     def access_dict(self, dic, key):
         print("Value:", dic[key])
